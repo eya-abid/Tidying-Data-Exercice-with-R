@@ -22,14 +22,13 @@ names(data.train) <- c(c('subject', 'activity'), features)
 data.test.x <- read.table('./UCI HAR Dataset/test/X_test.txt')
 data.test.activity <- read.csv('./UCI HAR Dataset/test/y_test.txt', header = FALSE, sep = ' ')
 data.test.subject <- read.csv('./UCI HAR Dataset/test/subject_test.txt', header = FALSE, sep = ' ')
-data.all <- rbind(data.train, data.test)
-
 data.test <-  data.frame(data.test.subject, data.test.activity, data.test.x)
 names(data.test) <- c(c('subject', 'activity'), features)
 
 #here we are merging the Training and Testing Sets into 1 data set called data.all
 
 data.all <- rbind(data.train, data.test)
+
 
 #below we Extracted only the measurements on the mean and standard deviation for each measurement
 
